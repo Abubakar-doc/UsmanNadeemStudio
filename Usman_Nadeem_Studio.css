@@ -205,6 +205,20 @@ html {
     transform: scale(1.7);
 }
 
+.contact_us_headings{
+    color: #97a3a7;
+    font-size: 1.3rem;
+}
+
+.contact_us_spans{
+    color: #d8ddde;
+    text-decoration: none;
+}
+
+.contact_us_spans:hover, .contact_us_spans:active{
+    color: #f5f6f7;
+}
+
 /* desktop */
 @media (min-width: 992px) and (max-width: 6000px) {
 
