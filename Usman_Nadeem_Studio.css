@@ -219,6 +219,13 @@ html {
     color: #f5f6f7;
 }
 
+.form-group{
+    margin: 0.5rem;
+}
+.form-control{
+    height: 3.5rem;
+}
+
 /* desktop */
 @media (min-width: 992px) and (max-width: 6000px) {
 
