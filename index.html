@@ -140,7 +140,8 @@
                 ALBUMS</button>
             <button id="" class="nav_bttns" onclick="scrollToSection('contact_us_section'); removeFocus()">CONTACT US
             </button>
-            <button id="" class="nav_bttns" onclick="  removeFocus()">BOOK ONLINE </button>
+            <button id="book_session" class="nav_bttns" onclick="redirectTo_book_session(); removeFocus()">BOOK ONLINE
+            </button>
         </div>
     </nav>
 
@@ -189,8 +190,9 @@
                                 aria-current="page" href="#">CONTACT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" id="zoom_in_effect" onclick="removeFocus()" aria-current="page"
-                                href="#">BOOK ONLINE</a>
+                            <a class="nav-link active" id="zoom_in_effect"
+                                onclick="redirectTo_book_session(); removeFocus()" aria-current="page" href="#">BOOK
+                                ONLINE</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
@@ -254,7 +256,7 @@
                             our subjects, ensuring that each photograph tells a captivating story.
                         </p>
                         <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                        <button type="button" onclick="removeFocus()"
+                        <button type="button" onclick="redirectTo_book_session(); removeFocus()"
                             style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                             class="btn btn-outline-dark">Book
                             a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -517,13 +519,16 @@
                         <div class="col-xs-12 row justify-content-between align-items-center">
                             <div class="col-lg-6 d-flex align-items-stretch">
                                 <div class="w-100 p-5">
-                                    <h3 class="mb-4" style="font-size: 1.8rem; font-weight: 400;">Contact us</h3>
-                                    <div class="dbox w-100 d-flex align-items-start" >
+                                    <h3 class="mb-4" style="font-size: 1.8rem; font-weight: 400; color: white;">Contact
+                                        us</h3>
+                                    <div class="dbox w-100 d-flex align-items-start">
                                         <div class="icon d-flex align-items-center justify-content-center">
                                             <span class="fas fa-map-marker-alt" style="font-size: 1.5rem;"></span>
                                         </div>
                                         <div class="text px-4">
-                                            <p class="contact_us_spans"><span class="contact_us_headings">ADDRESS<br></span > 198 West 21th Street, Suite 721 New York NY 10016
+                                            <p class="contact_us_spans"><span
+                                                    class="contact_us_headings">ADDRESS<br></span> 198 West 21th Street,
+                                                Suite 721 New York NY 10016
                                             </p>
                                         </div>
                                     </div>
@@ -532,7 +537,9 @@
                                             <span class="fas fa-phone" style="font-size: 1.5rem;"></span>
                                         </div>
                                         <div class="text px-4">
-                                            <p><span class="contact_us_headings">PHONE  <br></span><a target="_blank" href="tel://1234567920" class="contact_us_spans">+ 1235 2355 98</a></p>
+                                            <p><span class="contact_us_headings">PHONE <br></span><a target="_blank"
+                                                    href="tel://1234567920" class="contact_us_spans">+ 1235 2355 98</a>
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="dbox w-100 d-flex align-items-start">
@@ -541,7 +548,8 @@
                                         </div>
                                         <div class="text px-4">
                                             <p><span class="contact_us_headings">EMAIL <br></span> <a target="_blank"
-                                                    href="mailto:abubakaranjum065@gmail.com" class="contact_us_spans">abubakaranjum065@gmail.com</a></p>
+                                                    href="mailto:abubakaranjum065@gmail.com"
+                                                    class="contact_us_spans">abubakaranjum065@gmail.com</a></p>
                                         </div>
                                     </div>
                                     <div class="dbox w-100 d-flex align-items-start">
@@ -549,29 +557,16 @@
                                             <span class="fas fa-globe" style="font-size: 1.5rem;"></span>
                                         </div>
                                         <div class="text px-4">
-                                            <p><span class="contact_us_headings">WEBSITE <br></span> <a target="_blank" href="https://abubakar-doc.github.io/UsmanNadeemStudio/#" class="contact_us_spans">yoursite.com</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="dbox w-100 d-flex align-items-start">
-                                        <div class="icon d-flex align-items-center justify-content-center">
-                                            <span class="fab fa-facebook" style="font-size: 1.5rem;"></span>
-                                        </div>
-                                        <div class="text px-4">
-                                            <p><span class="contact_us_headings">FACEBOOK <br></span> <a target="_blank" href="https://www.facebook.com/usmannadeemsstudio" class="contact_us_spans">Click Here</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="dbox w-100 d-flex align-items-start">
-                                        <div class="icon d-flex align-items-center justify-content-center">
-                                            <span class="fab fa-instagram" style="font-size: 1.5rem;"></span>
-                                        </div>
-                                        <div class="text px-4">
-                                            <p><span class="contact_us_headings">INSTAGRAM <br></span> <a target="_blank" href="https://www.instagram.com/usmannadeems.studio/" class="contact_us_spans">Click Here</a></p>
+                                            <p><span class="contact_us_headings">WEBSITE <br></span> <a target="_blank"
+                                                    href="https://abubakar-doc.github.io/UsmanNadeemStudio/#"
+                                                    class="contact_us_spans">UsmanNadeemStudio.com</a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-12 col-lg-5">
-                                <div class="w-50 contact-wrap w-100 p-md-5 p-4" style="background-color: white; border-radius: 1rem;">
+                                <div class="w-50 contact-wrap w-100 p-md-5 p-4"
+                                    style="background-color: white; border-radius: 1rem;">
                                     <h3 class="mb-4" style="font-weight: 400; font-size: xx-large;">Get in touch</h3>
                                     <div id="form-message-warning" class="mb-4"></div>
                                     <div id="form-message-success" class="mb-4" style="display: none;">
@@ -599,13 +594,15 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <textarea name="message" class="form-control" style="height: 10rem; resize: none;" id="message" cols="30"
+                                                    <textarea name="message" class="form-control"
+                                                        style="height: 10rem; resize: none;" id="message" cols="30"
                                                         rows="5" placeholder="Message"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input style="background-color: #0b6cee; height: 3rem;" type="submit" value="Send Message" class="btn btn-primary">
+                                                    <input style="background-color: #0b6cee; height: 3rem;"
+                                                        type="submit" value="Send Message" class="btn btn-primary">
                                                     <div class="submittin"></div>
                                                 </div>
                                             </div>
@@ -620,6 +617,40 @@
         </div>
     </section>
 
+
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/usmannadeemsstudio" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/usmannadeems.studio/" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="https://abubakar-doc.github.io/UsmanNadeemStudio/">UsmanNadeemStudio.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
     <a href="#" class="back_to_top" onclick="removeFocus()"><span class="material-symbols-outlined">
             arrow_upward
