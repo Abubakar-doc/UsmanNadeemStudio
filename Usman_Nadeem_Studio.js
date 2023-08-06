@@ -155,5 +155,26 @@ window.addEventListener('DOMContentLoaded', function () {
   observer.observe(section);
 });
 
+function redirectTo_book_session() {
+  window.location.href = 'Book_session.html';
+}
 
+function redirectBackToHOME() {
+  window.location.href = 'Usman_Nadeem_Studio.html';
+}
 
+function redirectBackToAboutUS() {
+  window.location.href = 'Usman_Nadeem_Studio.html#about_me_section';
+}
+
+function redirectBackToPortfolio() {
+  window.location.href = 'Usman_Nadeem_Studio.html#portfolio_gallery_section';
+}
+
+function redirectBackToClientAlbum() {
+  window.location.href = 'Usman_Nadeem_Studio.html#client_album_section';
+}
+
+function redirectBackToContactUS() {
+  window.location.href = 'Usman_Nadeem_Studio.html#contact_us_section';
+}
