@@ -232,6 +232,11 @@ html {
     font-weight: 700;
 }
 
+.card-img-top:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 /* desktop */
 @media (min-width: 992px) and (max-width: 6000px) {
 
