@@ -156,7 +156,7 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 function redirectTo_book_session() {
-  window.location.href = 'Book_session.html';
+  window.location.href = 'Book_session.html#section_book_session';
 }
 
 function redirectBackToHOME() {
@@ -178,3 +178,53 @@ function redirectBackToClientAlbum() {
 function redirectBackToContactUS() {
   window.location.href = 'index.html#contact_us_section';
 }
+
+function toggleDisplayof_Wedding_event() {
+  var sectionToHide = document.getElementById("section_book_session");
+  var formToShow = document.getElementById("form_wedding_event");
+  
+  if (sectionToHide.style.display === "none") {
+    sectionToHide.style.display = "block";
+    formToShow.style.display = "none";
+  } else {
+    sectionToHide.style.display = "none";
+    formToShow.style.display = "block";
+  }
+  scrollToTopWithDelay();
+}
+var toggleButton = document.getElementById("toggleButton");
+toggleButton.addEventListener("click", toggleDisplay);
+
+
+function toggleDisplayof_couple_shoot() {
+  var sectionToHide = document.getElementById("section_book_session");
+  var formToShow = document.getElementById("form_couple_shoot");
+  
+  if (sectionToHide.style.display === "none") {
+    sectionToHide.style.display = "block";
+    formToShow.style.display = "none";
+  } else {
+    sectionToHide.style.display = "none";
+    formToShow.style.display = "block";
+  }
+  scrollToTopWithDelay();
+}
+var toggleButton = document.getElementById("toggleButton");
+toggleButton.addEventListener("click", toggleDisplay);
+
+
+function toggleDisplayof_special_event() {
+  var sectionToHide = document.getElementById("section_book_session");
+  var formToShow = document.getElementById("form_special_event");
+  
+  if (sectionToHide.style.display === "none") {
+    sectionToHide.style.display = "block";
+    formToShow.style.display = "none";
+  } else {
+    sectionToHide.style.display = "none";
+    formToShow.style.display = "block";
+  }
+  scrollToTopWithDelay();
+}
+var toggleButton = document.getElementById("toggleButton");
+toggleButton.addEventListener("click", toggleDisplay);
