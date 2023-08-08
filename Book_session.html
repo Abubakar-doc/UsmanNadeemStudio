@@ -115,7 +115,11 @@
 
     <!-- mylinks -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Book_session.css">
 
+    <!-- datepicker -->
+    <link href="jquery.datepicker2.css" rel="stylesheet">
+    <!-- datepicker -->
 
 </head>
 
@@ -165,8 +169,9 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" id="zoom_in_effect" onclick="redirectBackToHOME(); removeFocus()"
-                                aria-current="page" href="#">HOME</a>
+                            <a class="nav-link active" id="zoom_in_effect"
+                                onclick="redirectBackToHOME(); closeOffcanvas(); removeFocus() " aria-current="page"
+                                href="#">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" id="zoom_in_effect" onclick="redirectBackToAboutUS(); closeOffcanvas(); 
@@ -214,16 +219,11 @@
         </div>
     </nav>
 
-    <section id="section_book_session">
+    <section id="section_book_session" style="display: block;">
         <div class="container-fluid" style="padding-top: 2rem; background-color: white; position: relative;">
             <div id="album_h1">
                 <h1
-                    style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">
-                    <span class="material-symbols-outlined">
-                        horizontal_rule
-                    </span>BOOK ONLINE<span class="material-symbols-outlined">
-                        horizontal_rule
-                    </span>
+                    style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;" class="album_h1" >BOOK ONLINE
                 </h1>
             </div>
 
@@ -232,11 +232,11 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dghb1dhbv/image/upload/v1689958544/port/310096083_2029036870616872_840764696196660355_n_mfmceh.jpg"
-                                class="card-img-top" alt="...">
+                                class="card-img-top" alt="..." onclick="toggleDisplayof_Wedding_event()">
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">WEDDING EVENTS</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="removeFocus()"
+                                <button type="button" onclick="toggleDisplayof_Wedding_event(); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -249,11 +249,11 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dghb1dhbv/image/upload/v1689958544/port/310096083_2029036870616872_840764696196660355_n_mfmceh.jpg"
-                                class="card-img-top" alt="...">
+                                class="card-img-top" alt="..." onclick="toggleDisplayof_couple_shoot()">
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">COUPLE SHOOT</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="removeFocus()"
+                                <button type="button" onclick="toggleDisplayof_couple_shoot(); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -266,11 +266,11 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dghb1dhbv/image/upload/v1689958544/port/310096083_2029036870616872_840764696196660355_n_mfmceh.jpg"
-                                class="card-img-top" alt="...">
+                                class="card-img-top" alt="..." onclick="toggleDisplayof_special_event()">
                             <div class="card-body">
-                                <h5 class="card-title card-title_booksesseion">OTHER EVENTS</h5>
+                                <h5 class="card-title card-title_booksesseion">SPECIAL EVENTS</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="removeFocus()"
+                                <button type="button" onclick="toggleDisplayof_special_event(); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -284,7 +284,211 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-center text-white">
+    <!-- forms -->
+    <form id="form_wedding_event" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
+
+        <div id="album_h1" class="col-12">
+            <h1 class="album_h1" style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">- WEDDING EVENT -
+            </h1>
+        </div>
+
+        <div class="col-md-6 offset-md-3 mt-5" style="padding-left: 3rem; padding-right: 1.5rem;">
+            <div class="wrapper mt-3">
+
+                <div class="container-fluid" style="display: flex; justify-content: flex-end;">
+                    <button type="button" onclick=" toggleDisplayof_Wedding_event(); removeFocus()"
+                        style="display: flex; justify-content: flex-start; margin-bottom: 3%;"
+                        class="btn btn-outline-dark"><span style="padding-top: 2px;" class="material-symbols-outlined">
+                            chevron_left
+                        </span>Back</button>
+                </div>
+                <span style="font-size: 1.3rem; color: black; font-family: 'Playfair Display', serif;">Fill out your
+                    details</span><br>
+                <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
+                <label>
+                    <input type="text" required="required" title="Enter your name here">
+                    <span>Name</span>
+                </label>
+
+                <label>
+                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        title="Please enter a valid email address" required="required">
+                    <span>Email</span>
+                </label>
+
+
+                <label>
+                    <input type="tel" required="required" title="Enter your phone number here">
+                    <span>Phone number</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="required" title="Enter some details">
+                    <span>Event details</span>
+                </label>
+
+                <label>
+                    <input type="text" name="date" id="date" data-select="datepicker" required="required"
+                        title="Enter date of event">
+                    <span>Date of event</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="none" title="Enter some details">
+                    <span>Add a message</span>
+                </label>
+
+                <br><br>
+
+                <div class="container-fluid"
+                    style="display: flex; justify-content: flex-end; margin-top: -3rem;">
+                    <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
+                        class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
+                            class="material-symbols-outlined">
+                            chevron_right
+                        </span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+   <form id="form_couple_shoot" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
+
+        <div id="album_h1" class="col-12">
+            <h1 class="album_h1" style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">- COUPLE SHOOT -
+            </h1>
+        </div>
+
+        <div class="col-md-6 offset-md-3 mt-5" style="padding-left: 3rem; padding-right: 1.5rem;">
+            <div class="wrapper mt-3">
+
+                <div class="container-fluid" style="display: flex; justify-content: flex-end;">
+                    <button type="button" onclick=" toggleDisplayof_Wedding_event(); removeFocus()"
+                        style="display: flex; justify-content: flex-start; margin-bottom: 3%;"
+                        class="btn btn-outline-dark"><span style="padding-top: 2px;" class="material-symbols-outlined">
+                            chevron_left
+                        </span>Back</button>
+                </div>
+                <span style="font-size: 1.3rem; color: black; font-family: 'Playfair Display', serif;">Fill out your
+                    details</span><br>
+                <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
+                <label>
+                    <input type="text" required="required" title="Enter your name here">
+                    <span>Name</span>
+                </label>
+
+                <label>
+                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        title="Please enter a valid email address" required="required">
+                    <span>Email</span>
+                </label>
+
+
+                <label>
+                    <input type="tel" required="required" title="Enter your phone number here">
+                    <span>Phone number</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="required" title="Enter some details">
+                    <span>Event details</span>
+                </label>
+
+                <label>
+                    <input type="text" name="date" id="date" data-select="datepicker" required="required"
+                        title="Enter date of event">
+                    <span>Date of event</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="none" title="Enter some details">
+                    <span>Add a message</span>
+                </label>
+
+                <br><br>
+
+                <div class="container-fluid"
+                    style="display: flex; justify-content: flex-end; margin-top: -3rem;">
+                    <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
+                        class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
+                            class="material-symbols-outlined">
+                            chevron_right
+                        </span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form id="form_special_event" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
+
+        <div id="album_h1" class="col-12">
+            <h1 class="album_h1" style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">- SPECIAL EVENT -
+            </h1>
+        </div>
+
+        <div class="col-md-6 offset-md-3 mt-5" style="padding-left: 3rem; padding-right: 1.5rem;">
+            <div class="wrapper mt-3">
+
+                <div class="container-fluid" style="display: flex; justify-content: flex-end;">
+                    <button type="button" onclick=" toggleDisplayof_Wedding_event(); removeFocus()"
+                        style="display: flex; justify-content: flex-start; margin-bottom: 3%;"
+                        class="btn btn-outline-dark"><span style="padding-top: 2px;" class="material-symbols-outlined">
+                            chevron_left
+                        </span>Back</button>
+                </div>
+                <span style="font-size: 1.3rem; color: black; font-family: 'Playfair Display', serif;">Fill out your
+                    details</span><br>
+                <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
+                <label>
+                    <input type="text" required="required" title="Enter your name here">
+                    <span>Name</span>
+                </label>
+
+                <label>
+                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                        title="Please enter a valid email address" required="required">
+                    <span>Email</span>
+                </label>
+
+
+                <label>
+                    <input type="tel" required="required" title="Enter your phone number here">
+                    <span>Phone number</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="required" title="Enter some details">
+                    <span>Event details</span>
+                </label>
+
+                <label>
+                    <input type="text" name="date" id="date" data-select="datepicker" required="required"
+                        title="Enter date of event">
+                    <span>Date of event</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="none" title="Enter some details">
+                    <span>Add a message</span>
+                </label>
+
+                <br><br>
+
+                <div class="container-fluid"
+                    style="display: flex; justify-content: flex-end; margin-top: -3rem;">
+                    <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
+                        class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
+                            class="material-symbols-outlined">
+                            chevron_right
+                        </span></button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- forms -->
+
+
+    <footer class="bg-dark text-center text-white" style="margin-top: 4rem;">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->
@@ -318,10 +522,29 @@
         <!-- Copyright -->
     </footer>
 
-
     <a href="#" class="back_to_top" onclick="removeFocus()"><span class="material-symbols-outlined">
             arrow_upward
         </span></a>
+
+    <!-- script for date picker -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script src="jquery.datepicker2.js"></script>
+    <script>
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
