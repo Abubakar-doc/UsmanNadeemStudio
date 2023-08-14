@@ -222,8 +222,8 @@
     <section id="section_book_session" style="display: block;">
         <div class="container-fluid" style="padding-top: 2rem; background-color: white; position: relative;">
             <div id="album_h1">
-                <h1
-                    style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;" class="album_h1" >BOOK ONLINE
+                <h1 style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;"
+                    class="album_h1">BOOK ONLINE
                 </h1>
             </div>
 
@@ -232,11 +232,11 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dghb1dhbv/image/upload/v1689958544/port/310096083_2029036870616872_840764696196660355_n_mfmceh.jpg"
-                                class="card-img-top" alt="..." onclick="toggleDisplayof_Wedding_event()">
+                                class="card-img-top" alt="..." onclick="toggleDisplayof_form('form_wedding_event')">
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">WEDDING EVENTS</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="toggleDisplayof_Wedding_event(); removeFocus()"
+                                <button type="button" id="toggleButton" onclick="toggleDisplayof_form('form_wedding_event'); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -249,11 +249,11 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dghb1dhbv/image/upload/v1689958544/port/310096083_2029036870616872_840764696196660355_n_mfmceh.jpg"
-                                class="card-img-top" alt="..." onclick="toggleDisplayof_couple_shoot()">
+                                class="card-img-top" alt="..." onclick=" toggleDisplayof_form('form_couple_shoot');">
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">COUPLE SHOOT</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="toggleDisplayof_couple_shoot(); removeFocus()"
+                                <button type="button" onclick=" toggleDisplayof_form('form_couple_shoot'); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -266,11 +266,11 @@
                     <div class="col-md-4 mb-4">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dghb1dhbv/image/upload/v1689958544/port/310096083_2029036870616872_840764696196660355_n_mfmceh.jpg"
-                                class="card-img-top" alt="..." onclick="toggleDisplayof_special_event()">
+                                class="card-img-top" alt="..." onclick="toggleDisplayof_form('form_special_event')">
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">SPECIAL EVENTS</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="toggleDisplayof_special_event(); removeFocus()"
+                                <button type="button" onclick="toggleDisplayof_form('form_special_event'); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -288,7 +288,9 @@
     <form id="form_wedding_event" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
 
         <div id="album_h1" class="col-12">
-            <h1 class="album_h1" style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">- WEDDING EVENT -
+            <h1 class="album_h1"
+                style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">
+                WEDDING EVENT -
             </h1>
         </div>
 
@@ -296,7 +298,7 @@
             <div class="wrapper mt-3">
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end;">
-                    <button type="button" onclick=" toggleDisplayof_Wedding_event(); removeFocus()"
+                    <button type="button" onclick="toggleDisplayof_form('form_wedding_event'); removeFocus()"
                         style="display: flex; justify-content: flex-start; margin-bottom: 3%;"
                         class="btn btn-outline-dark"><span style="padding-top: 2px;" class="material-symbols-outlined">
                             chevron_left
@@ -340,9 +342,8 @@
 
                 <br><br>
 
-                <div class="container-fluid"
-                    style="display: flex; justify-content: flex-end; margin-top: -3rem;">
-                    <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
+                <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
+                    <button type="" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
                         class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
                             class="material-symbols-outlined">
                             chevron_right
@@ -352,10 +353,12 @@
         </div>
     </form>
 
-   <form id="form_couple_shoot" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
+    <form id="form_couple_shoot" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
 
         <div id="album_h1" class="col-12">
-            <h1 class="album_h1" style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">- COUPLE SHOOT -
+            <h1 class="album_h1"
+                style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">-
+                COUPLE SHOOT -
             </h1>
         </div>
 
@@ -363,7 +366,7 @@
             <div class="wrapper mt-3">
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end;">
-                    <button type="button" onclick=" toggleDisplayof_Wedding_event(); removeFocus()"
+                    <button type="button" onclick=" toggleDisplayof_form('form_couple_shoot'); removeFocus()"
                         style="display: flex; justify-content: flex-start; margin-bottom: 3%;"
                         class="btn btn-outline-dark"><span style="padding-top: 2px;" class="material-symbols-outlined">
                             chevron_left
@@ -407,8 +410,7 @@
 
                 <br><br>
 
-                <div class="container-fluid"
-                    style="display: flex; justify-content: flex-end; margin-top: -3rem;">
+                <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
                     <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
                         class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
                             class="material-symbols-outlined">
@@ -422,7 +424,9 @@
     <form id="form_special_event" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
 
         <div id="album_h1" class="col-12">
-            <h1 class="album_h1" style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">- SPECIAL EVENT -
+            <h1 class="album_h1"
+                style="font-size: 2.2rem; color: #262b2d; font-family: 'Playfair Display', serif; font-weight: 570;">-
+                SPECIAL EVENT -
             </h1>
         </div>
 
@@ -430,7 +434,7 @@
             <div class="wrapper mt-3">
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end;">
-                    <button type="button" onclick=" toggleDisplayof_Wedding_event(); removeFocus()"
+                    <button type="button" onclick=" toggleDisplayof_form('form_special_event'); removeFocus()"
                         style="display: flex; justify-content: flex-start; margin-bottom: 3%;"
                         class="btn btn-outline-dark"><span style="padding-top: 2px;" class="material-symbols-outlined">
                             chevron_left
@@ -474,8 +478,7 @@
 
                 <br><br>
 
-                <div class="container-fluid"
-                    style="display: flex; justify-content: flex-end; margin-top: -3rem;">
+                <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
                     <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
                         class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
                             class="material-symbols-outlined">
@@ -486,6 +489,8 @@
         </div>
     </form>
     <!-- forms -->
+
+    <!-- forms_confirmation -->
 
 
     <footer class="bg-dark text-center text-white" style="margin-top: 4rem;">
