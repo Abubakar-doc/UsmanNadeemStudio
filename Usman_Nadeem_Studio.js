@@ -144,7 +144,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var observer = new IntersectionObserver(function (entries) {
     var entry = entries[0];
     var isIntersecting = entry.isIntersecting || entry.intersectionRatio > 0;
-    
+
     if (isIntersecting) {
       background.style.backgroundImage = 'url("' + customBackgroundURL + '")';
     } else {
@@ -179,52 +179,55 @@ function redirectBackToContactUS() {
   window.location.href = 'index.html#contact_us_section';
 }
 
-function toggleDisplayof_Wedding_event() {
+
+function toggleDisplayof_form(FormToShow) {
   var sectionToHide = document.getElementById("section_book_session");
-  var formToShow = document.getElementById("form_wedding_event");
-  
+  var formToShow = document.getElementById(FormToShow);
+
   if (sectionToHide.style.display === "none") {
     sectionToHide.style.display = "block";
     formToShow.style.display = "none";
+    redirectTo_book_session();
   } else {
     sectionToHide.style.display = "none";
     formToShow.style.display = "block";
+    scrollToTopWithDelay();
   }
-  scrollToTopWithDelay();
 }
-var toggleButton = document.getElementById("toggleButton");
-toggleButton.addEventListener("click", toggleDisplay);
 
 
-function toggleDisplayof_couple_shoot() {
-  var sectionToHide = document.getElementById("section_book_session");
-  var formToShow = document.getElementById("form_couple_shoot");
-  
-  if (sectionToHide.style.display === "none") {
-    sectionToHide.style.display = "block";
-    formToShow.style.display = "none";
-  } else {
-    sectionToHide.style.display = "none";
-    formToShow.style.display = "block";
-  }
-  scrollToTopWithDelay();
+        
+// function contactus_sendEmail() {
+//   Email.send({
+//     Host: "smtp.elasticemail.com",
+//     Username: "abubakaranjum065@gmail.com",
+//     Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
+//     To: 'abubakaranjum066@gmail.com',
+//     From: "abubakaranjum065@gmail.com",
+//     Subject: "Mail from UsmanNadeemStudio.com : " + document.getElementById("subject").value,
+//     Body: "Name : "+ document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Message : " + document.getElementById("message").value
+//   }).then(
+//     message => alert(message)
+//   );
+// }
+
+function contactus_sendEmail() {
+  event.preventDefault();
+
+  Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "abubakaranjum065@gmail.com",
+      Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
+      To: 'abubakaranjum066@gmail.com',
+      From: "abubakaranjum065@gmail.com",
+      Subject: "Mail from UsmanNadeemStudio.com : " + document.getElementById("subject").value,
+      Body: "Name : "+ document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Message : " + document.getElementById("message").value
+  }).then(
+      () => {
+          document.getElementById("name").value = "NULL";
+          document.getElementById("email").value = "NULL";
+          document.getElementById("subject").value = "NULL";
+          document.getElementById("message").value = "NULL";
+      }
+  );
 }
-var toggleButton = document.getElementById("toggleButton");
-toggleButton.addEventListener("click", toggleDisplay);
-
-
-function toggleDisplayof_special_event() {
-  var sectionToHide = document.getElementById("section_book_session");
-  var formToShow = document.getElementById("form_special_event");
-  
-  if (sectionToHide.style.display === "none") {
-    sectionToHide.style.display = "block";
-    formToShow.style.display = "none";
-  } else {
-    sectionToHide.style.display = "none";
-    formToShow.style.display = "block";
-  }
-  scrollToTopWithDelay();
-}
-var toggleButton = document.getElementById("toggleButton");
-toggleButton.addEventListener("click", toggleDisplay);
