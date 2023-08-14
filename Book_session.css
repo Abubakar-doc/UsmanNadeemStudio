@@ -31,10 +31,10 @@ label>input:valid+span {
     transform-origin: 0;
 }
 
-label>input:valid {
+/* label>input:valid {
     border-bottom: 1px solid black;
     box-shadow: 0 1px 0 0 black;
-}
+} */
 
 label>span {
     color: #9e9e9e;
@@ -51,7 +51,7 @@ label>input:focus+span {
     transform-origin: 0;
     color: black;
 }
-
+/*  */
 label>input:focus {
     border-bottom: 1px solid black;
     box-shadow: 0 1px 0 0 black;
