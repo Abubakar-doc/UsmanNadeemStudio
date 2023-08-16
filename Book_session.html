@@ -236,7 +236,8 @@
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">WEDDING EVENTS</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" id="toggleButton" onclick="toggleDisplayof_form('form_wedding_event'); removeFocus()"
+                                <button type="button" id="toggleButton"
+                                    onclick="toggleDisplayof_form('form_wedding_event'); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -253,7 +254,8 @@
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">COUPLE SHOOT</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick=" toggleDisplayof_form('form_couple_shoot'); removeFocus()"
+                                <button type="button"
+                                    onclick=" toggleDisplayof_form('form_couple_shoot'); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -270,7 +272,8 @@
                             <div class="card-body">
                                 <h5 class="card-title card-title_booksesseion">SPECIAL EVENTS</h5>
                                 <p class="card-text">1 hr <br> Introductory meeting</p>
-                                <button type="button" onclick="toggleDisplayof_form('form_special_event'); removeFocus()"
+                                <button type="button"
+                                    onclick="toggleDisplayof_form('form_special_event'); removeFocus()"
                                     style="display: flex; justify-content: space-around; margin-bottom: 3%;"
                                     class="btn btn-outline-dark">Book
                                     a session<span style="padding-top: 2px;" class="material-symbols-outlined">
@@ -285,7 +288,8 @@
     </section>
 
     <!-- forms -->
-    <form id="form_wedding_event" style="background-color: white; display: none; margin-top: 2rem;" class="row col-12">
+    <form id="form_wedding_event" style="background-color: white; display: none; margin-top: 2rem;"
+        class="row col-12 container-fluid">
 
         <div id="album_h1" class="col-12">
             <h1 class="album_h1"
@@ -295,7 +299,7 @@
         </div>
 
         <div class="col-md-6 offset-md-3 mt-5" style="padding-left: 3rem; padding-right: 1.5rem;">
-            <div class="wrapper mt-3">
+            <div class="wrapper mt-3" style="overflow: hidden;">
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end;">
                     <button type="button" onclick="toggleDisplayof_form('form_wedding_event'); removeFocus()"
@@ -308,35 +312,122 @@
                     details</span><br>
                 <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
                 <label>
-                    <input type="text" required="required" title="Enter your name here">
+                    <input type="text" required="required" title="Enter your name">
                     <span>Name</span>
                 </label>
 
                 <label>
                     <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                        title="Please enter a valid email address" required="required">
+                        title="Kindly enter a valid email address" required="required">
                     <span>Email</span>
                 </label>
 
-
                 <label>
-                    <input type="tel" required="required" title="Enter your phone number here">
+                    <input type="tel" required="required" title="Enter your phone number">
                     <span>Phone number</span>
                 </label>
 
-                <label>
-                    <input data-provide="text" required="required" title="Enter some details">
-                    <span>Event details</span>
-                </label>
+                <label><br>
+                    <select class="select" title="Enter duration" required="required">
+                        <option value="1">1 day</option>
+                        <option value="2">2 days</option>
+                        <option value="3">3 days</option>
+                        <option value="4">4 days</option>
+                        <option value="5">5 days</option>
+                        <option value="5">more than 5 days</option>
+                    </select>
+                    <span>Event duration</span>
+                </label>          
 
                 <label>
                     <input type="text" name="date" id="date" data-select="datepicker" required="required"
                         title="Enter date of event">
                     <span>Date of event</span>
                 </label>
+                
+                <label>
+                    <input data-provide="text" type="time" multiple required="required"
+                        title="Enter timing of selected events">
+                    <span>Event timing</span>
+                </label>
+                
+                <label>
+                    <br><br>
+                    <select id="choices-multiple-remove-button" 
+                        placeholder="You can add multiple events" multiple required>
+                        <option value="Engagement">Engagement</option>
+                        <option value="Mayun">Mayun</option>
+                        <option value="Dholki">Dholki</option>
+                        <option value="Nikkah">Nikkah</option>
+                        <option value="Mehendi">Mehendi</option>
+                        <option value="Baraat">Baraat</option>
+                        <option value="Walima">Walima</option>
+                        <option value="Other">Other...</option>
+                    </select>                                                      
+                    <!-- <br><br>
+                    <select id="choices-multiple-remove-button" class="select-event-type"
+                        placeholder="You can add multiple events" multiple required >
+                        <option value="Engagement">1. Engagement</option>
+                        <option value="Mayun">2. Mayun</option>
+                        <option value="Dholki">3. Dholki</option>
+                        <option value="Nikkah">4. Nikkah</option>
+                        <option value="Mehendi">5. Mehendi</option>
+                        <option value="Baraat">6. Baraat</option>
+                        <option value="Walima">7. Walima</option>
+                        <option value="Other" >8. Other...</option>
+                    </select> -->
+                    <span>Type of event</span>
+                </label>
 
                 <label>
-                    <input data-provide="text" required="none" title="Enter some details">
+                    <input data-provide="text" required="required" title="Enter some details about event">
+                    <span>Event details</span>
+                </label>  
+
+                <label><br>
+                    <select class="select" title="Select number of photographers" required="required">
+                        <option value="1">none</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">more than 5</option>
+                    </select>
+                    <span>Number of photographers required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" title="Select number of videographers" required="required">
+                        <option value="1">none</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">more than 5</option>
+                    </select>
+                    <span>Number of videographers required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" required="required">
+                        <option value="1">no</option>
+                        <option value="2">yes</option>
+                    </select>
+                    <span>Drone required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" required="required">
+                        <option value="1">single side coverage</option>
+                        <option value="2">double side coverage</option>
+                    </select>
+                    <span>Coverage</span>
+                </label>
+
+                <label>
+                    <input data-provide="text" required="none" title="Leave us a message">
                     <span>Add a message</span>
                 </label>
 
@@ -376,42 +467,104 @@
                     details</span><br>
                 <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
                 <label>
-                    <input type="text" required="required" title="Enter your name here">
+                    <input type="text" required="required" title="Enter your name">
                     <span>Name</span>
                 </label>
 
                 <label>
                     <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                        title="Please enter a valid email address" required="required">
+                        title="Kindly enter a valid email address" required="required">
                     <span>Email</span>
                 </label>
 
-
                 <label>
-                    <input type="tel" required="required" title="Enter your phone number here">
+                    <input type="tel" required="required" title="Enter your phone number">
                     <span>Phone number</span>
                 </label>
 
-                <label>
-                    <input data-provide="text" required="required" title="Enter some details">
-                    <span>Event details</span>
-                </label>
+                <label><br>
+                    <select class="select" title="Enter duration" required="required">
+                        <option value="1">1 day</option>
+                        <option value="2">2 days</option>
+                        <option value="3">3 days</option>
+                        <option value="4">4 days</option>
+                        <option value="5">5 days</option>
+                        <option value="5">more than 5 days</option>
+                    </select>
+                    <span>Service duration</span>
+                </label>          
 
                 <label>
                     <input type="text" name="date" id="date" data-select="datepicker" required="required"
-                        title="Enter date of event">
-                    <span>Date of event</span>
+                        title="Enter date of shoot">
+                    <span>Date of shoot</span>
+                </label>
+                
+                <label>
+                    <input data-provide="text" type="time" multiple required="required"
+                        title="Enter timing of shoot">
+                    <span>Shoot timing</span>
+                </label>
+                
+                <label>
+                    <br><br>
+                    <select id="choices-multiple-remove-button"
+                        placeholder="You can add multiple services" multiple required>
+                        <option value="Pre wedding shoot">Pre wedding shoot</option>
+                        <option value="Post wedding shoot">Post wedding shoot</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span>Select service</span>
+                </label>
+                
+                <label>
+                    <input data-provide="text" required="required" title="Enter some details about shooting">
+                    <span>Add details</span>
+                </label>  
+
+                <label><br>
+                    <select class="select" title="Select number of photographers" required="required">
+                        <option value="1">none</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">more than 5</option>
+                    </select>
+                    <span>Number of photographers required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" title="Select number of videographers" required="required">
+                        <option value="1">none</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">more than 5</option>
+                    </select>
+                    <span>Number of videographers required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" required="required">
+                        <option value="1">no</option>
+                        <option value="2">yes</option>
+                    </select>
+                    <span>Drone required</span>
                 </label>
 
                 <label>
-                    <input data-provide="text" required="none" title="Enter some details">
+                    <input data-provide="text" required="none" title="Leave us a message">
                     <span>Add a message</span>
                 </label>
 
                 <br><br>
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
-                    <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
+                    <button type="" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
                         class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
                             class="material-symbols-outlined">
                             chevron_right
@@ -444,42 +597,105 @@
                     details</span><br>
                 <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
                 <label>
-                    <input type="text" required="required" title="Enter your name here">
+                    <input type="text" required="required" title="Enter your name">
                     <span>Name</span>
                 </label>
 
                 <label>
                     <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                        title="Please enter a valid email address" required="required">
+                        title="Kindly enter a valid email address" required="required">
                     <span>Email</span>
                 </label>
 
-
                 <label>
-                    <input type="tel" required="required" title="Enter your phone number here">
+                    <input type="tel" required="required" title="Enter your phone number">
                     <span>Phone number</span>
                 </label>
 
-                <label>
-                    <input data-provide="text" required="required" title="Enter some details">
-                    <span>Event details</span>
-                </label>
+                <label><br>
+                    <select class="select" title="Enter duration" required="required">
+                        <option value="1">1 day</option>
+                        <option value="2">2 days</option>
+                        <option value="3">3 days</option>
+                        <option value="4">4 days</option>
+                        <option value="5">5 days</option>
+                        <option value="5">more than 5 days</option>
+                    </select>
+                    <span>Event duration</span>
+                </label>          
 
                 <label>
                     <input type="text" name="date" id="date" data-select="datepicker" required="required"
                         title="Enter date of event">
                     <span>Date of event</span>
                 </label>
+                
+                <label>
+                    <input data-provide="text" type="time" multiple required="required"
+                        title="Enter timing of selected events">
+                    <span>Event timing</span>
+                </label>
+                
+                <label>
+                    <br><br>
+                    <select id="choices-multiple-remove-button"
+                        placeholder="You can add multiple events" multiple required>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Family dinner">Family dinner</option>
+                        <option value="Cooperate">Cooperate</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span>Type of event</span>
+                </label>
+                
+                <label>
+                    <input data-provide="text" required="required" title="Enter some details about event">
+                    <span>Event details</span>
+                </label>  
+
+                <label><br>
+                    <select class="select" title="Select number of photographers" required="required">
+                        <option value="1">none</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">more than 5</option>
+                    </select>
+                    <span>Number of photographers required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" title="Select number of videographers" required="required">
+                        <option value="1">none</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="5">4</option>
+                        <option value="6">5</option>
+                        <option value="7">more than 5</option>
+                    </select>
+                    <span>Number of videographers required</span>
+                </label>
+                
+                <label><br>
+                    <select class="select" required="required">
+                        <option value="1">no</option>
+                        <option value="2">yes</option>
+                    </select>
+                    <span>Drone required</span>
+                </label>
 
                 <label>
-                    <input data-provide="text" required="none" title="Enter some details">
+                    <input data-provide="text" required="none" title="Leave us a message">
                     <span>Add a message</span>
                 </label>
 
                 <br><br>
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
-                    <button type="submit" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
+                    <button type="" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
                         class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
                             class="material-symbols-outlined">
                             chevron_right
@@ -491,7 +707,6 @@
     <!-- forms -->
 
     <!-- forms_confirmation -->
-
 
     <footer class="bg-dark text-center text-white" style="margin-top: 4rem;">
         <!-- Grid container -->
@@ -550,6 +765,25 @@
         })();
 
     </script>
+
+    <!-- script for select -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="path/to/choices.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var eventTypeSelect = new Choices('#choices-multiple-remove-button', {
+                removeItemButton: true,
+                maxItemCount: 10,
+                searchResultLimit: 10,
+                renderChoiceLimit: 10,
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
