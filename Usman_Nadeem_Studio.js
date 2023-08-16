@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  observer.observe(section);
+  // observer.observe(section);
 });
 
 function redirectTo_book_session() {
@@ -196,24 +196,15 @@ function toggleDisplayof_form(FormToShow) {
 }
 
 
-        
-// function contactus_sendEmail() {
-//   Email.send({
-//     Host: "smtp.elasticemail.com",
-//     Username: "abubakaranjum065@gmail.com",
-//     Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
-//     To: 'abubakaranjum066@gmail.com',
-//     From: "abubakaranjum065@gmail.com",
-//     Subject: "Mail from UsmanNadeemStudio.com : " + document.getElementById("subject").value,
-//     Body: "Name : "+ document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Message : " + document.getElementById("message").value
-//   }).then(
-//     message => alert(message)
-//   );
-// }
-
 function contactus_sendEmail() {
-  event.preventDefault();
+  var form = document.getElementById('contactForm');
 
+  if (!form.checkValidity()) {
+      alert("Please fill out all required fields before sending the message!");
+      return;
+  }
+
+  event.preventDefault();
   Email.send({
       Host: "smtp.elasticemail.com",
       Username: "abubakaranjum065@gmail.com",
@@ -221,13 +212,13 @@ function contactus_sendEmail() {
       To: 'abubakaranjum066@gmail.com',
       From: "abubakaranjum065@gmail.com",
       Subject: "Mail from UsmanNadeemStudio.com : " + document.getElementById("subject").value,
-      Body: "Name : "+ document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Message : " + document.getElementById("message").value
+      Body: "Name : " + document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Subject : " + document.getElementById("subject").value + "<br>Message : " + document.getElementById("message").value
   }).then(
       () => {
-          document.getElementById("name").value = "NULL";
-          document.getElementById("email").value = "NULL";
-          document.getElementById("subject").value = "NULL";
-          document.getElementById("message").value = "NULL";
+          form.reset();
       }
   );
+    // Trigger modal opening
+    var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+    modal.show();
 }
