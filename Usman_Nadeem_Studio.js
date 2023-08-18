@@ -135,10 +135,10 @@ function activateScroll() {
   document.removeEventListener('touchmove', preventDefaultScroll, { passive: false });
 }
 
-window.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   var background = document.getElementById('background');
   var section = document.getElementById('decoration_section');
-  var defaultBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1690213151/nicholas-santoianni-A2OpX4O4uwo-unsplash_zkg9xy.jpg';
+  var defaultBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1692390073/priscilla-du-preez-rf5U-IXqxzg-unsplash_tgxoas.jpg';
   var customBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1688759091/pexels-v%C4%83n-th%E1%BA%AFng_fbni2c.jpg';
 
   var observer = new IntersectionObserver(function (entries) {
@@ -147,12 +147,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
     if (isIntersecting) {
       background.style.backgroundImage = 'url("' + customBackgroundURL + '")';
+    } else if (!isIntersecting && entry.boundingClientRect.top < 0) {
+      // If section has passed and the user is scrolling back up
+      background.style.backgroundImage = 'url("' + customBackgroundURL + '")';
     } else {
       background.style.backgroundImage = 'url("' + defaultBackgroundURL + '")';
     }
   });
 
-  // observer.observe(section);
+  observer.observe(section);
 });
 
 function redirectTo_book_session() {
@@ -211,7 +214,7 @@ function contactus_sendEmail() {
       Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
       To: 'abubakaranjum066@gmail.com',
       From: "abubakaranjum065@gmail.com",
-      Subject: "Mail from UsmanNadeemStudio.com : " + document.getElementById("subject").value,
+      Subject: "Message from " + document.getElementById("name").value + ", UsmanNadeemStudio.com",
       Body: "Name : " + document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Subject : " + document.getElementById("subject").value + "<br>Message : " + document.getElementById("message").value
   }).then(
       () => {
@@ -222,3 +225,5 @@ function contactus_sendEmail() {
     var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
     modal.show();
 }
+
+
