@@ -151,7 +151,7 @@
     <nav id="xs-nav" style="position: relative;" class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid nav">
             <a class="navbar-brand" id="zoom_in_effect" onclick="scrollToTopWithDelay(); removeFocus();" href="#"
-                style="font-family: 'Ysabeau SC', sans-serif; letter-spacing: 1mm; font-weight: 550; font-size: 1.2rem;">Usman
+                style="font-family: 'Ysabeau SC', sans-serif; letter-spacing: 1mm; font-weight: 550; font-size: 1rem;">Usman
                 Nadeem's Studio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation"
@@ -312,48 +312,24 @@
                     details</span><br>
                 <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
                 <label>
-                    <input type="text" required="required" title="Enter your name">
+                    <input id="w_name" type="text" required="required" title="Enter your name">
                     <span>Name</span>
                 </label>
 
                 <label>
-                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    <input id="w_email" type="email" pattern="[a-zA-Z0-9._%\\+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
                         title="Kindly enter a valid email address" required="required">
                     <span>Email</span>
                 </label>
 
                 <label>
-                    <input type="tel" required="required" title="Enter your phone number">
+                    <input id="w_contact" type="tel" required="required" title="Enter your phone number">
                     <span>Phone number</span>
                 </label>
 
-                <label><br>
-                    <select class="select" title="Enter duration" required="required">
-                        <option value="1">1 day</option>
-                        <option value="2">2 days</option>
-                        <option value="3">3 days</option>
-                        <option value="4">4 days</option>
-                        <option value="5">5 days</option>
-                        <option value="5">more than 5 days</option>
-                    </select>
-                    <span>Event duration</span>
-                </label>          
-
-                <label>
-                    <input type="text" name="date" id="date" data-select="datepicker" required="required"
-                        title="Enter date of event">
-                    <span>Date of event</span>
-                </label>
-                
-                <label>
-                    <input data-provide="text" type="time" multiple required="required"
-                        title="Enter timing of selected events">
-                    <span>Event timing</span>
-                </label>
-                
                 <label>
                     <br><br>
-                    <select id="choices-multiple-remove-button" 
+                    <select id="choices-multiple-remove-button" id="w_event_type"
                         placeholder="You can add multiple events" multiple required>
                         <option value="Engagement">Engagement</option>
                         <option value="Mayun">Mayun</option>
@@ -363,80 +339,100 @@
                         <option value="Baraat">Baraat</option>
                         <option value="Walima">Walima</option>
                         <option value="Other">Other...</option>
-                    </select>                                                      
-                    <!-- <br><br>
-                    <select id="choices-multiple-remove-button" class="select-event-type"
-                        placeholder="You can add multiple events" multiple required >
-                        <option value="Engagement">1. Engagement</option>
-                        <option value="Mayun">2. Mayun</option>
-                        <option value="Dholki">3. Dholki</option>
-                        <option value="Nikkah">4. Nikkah</option>
-                        <option value="Mehendi">5. Mehendi</option>
-                        <option value="Baraat">6. Baraat</option>
-                        <option value="Walima">7. Walima</option>
-                        <option value="Other" >8. Other...</option>
-                    </select> -->
+                    </select>
                     <span>Type of event</span>
                 </label>
 
                 <label>
-                    <input data-provide="text" required="required" title="Enter some details about event">
-                    <span>Event details</span>
-                </label>  
+                    <input id="w_event_date" data-select="datepicker" required="required" title="Enter date of event">
+                    <span>Date of event</span>
+                </label>
 
                 <label><br>
-                    <select class="select" title="Select number of photographers" required="required">
-                        <option value="1">none</option>
+                    <select id="w_event_duration" class="select" title="Enter duration" required="required">
+                        <option value="1 day">1 day</option>
+                        <option value="2 days">2 days</option>
+                        <option value="3 days">3 days</option>
+                        <option value="4 days">4 days</option>
+                        <option value="5 days">5 days</option>
+                        <option value="more than 5 days">more than 5 days</option>
+                    </select>
+                    <span>Event duration</span>
+                </label>
+
+                <label>
+                    <input id="w_venue" type="text" required="required" title="Enter address for selected events">
+                    <span>Event venue</span>
+                </label>
+
+                <label>
+                    <input id="w_event_time" data-provide="text" type="time" required="required"
+                        title="Enter timing of selected events">
+                    <span>Event timing</span>
+                </label>
+
+                <label>
+                    <input id="w_event_detail" data-provide="text" required="required"
+                        title="Enter some details about event">
+                    <span>Event details</span>
+                </label>
+
+                <label><br>
+                    <select id="w_num_photographers" class="select" title="Select number of photographers"
+                        required="required">
+                        <option value="none">none</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
                         <option value="4">3</option>
                         <option value="5">4</option>
                         <option value="6">5</option>
-                        <option value="7">more than 5</option>
+                        <option value="more than 5">more than 5</option>
                     </select>
                     <span>Number of photographers required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" title="Select number of videographers" required="required">
-                        <option value="1">none</option>
+                    <select id="w_num_videographers" class="select" title="Select number of videographers"
+                        required="required">
+                        <option value="none">none</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
                         <option value="4">3</option>
                         <option value="5">4</option>
                         <option value="6">5</option>
-                        <option value="7">more than 5</option>
+                        <option value="more than 5">more than 5</option>
                     </select>
                     <span>Number of videographers required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" required="required">
-                        <option value="1">no</option>
-                        <option value="2">yes</option>
+                    <select id="w_drone" class="select" required="required">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
                     </select>
                     <span>Drone required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" required="required">
-                        <option value="1">single side coverage</option>
-                        <option value="2">double side coverage</option>
+                    <select id="w_coverage" class="select" required="required">
+                        <option value="single side coverage">single side coverage</option>
+                        <option value="double side coverage">double side coverage</option>
                     </select>
                     <span>Coverage</span>
                 </label>
 
                 <label>
-                    <input data-provide="text" required="none" title="Leave us a message">
+                    <input id="w_message" data-provide="text" required="none" title="Leave us a message">
                     <span>Add a message</span>
                 </label>
 
                 <br><br>
 
                 <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
-                    <button type="" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
-                        class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
-                            class="material-symbols-outlined">
+                    <button id="btn_submit" type="submit" form="form_wedding_event"
+                        onclick=" wedding_event_sendEmail(); removeFocus();"
+                        style="display: flex; justify-content: space-around;" class="btn btn-outline-dark">Book now<span
+                            style="padding-top: 2px;" class="material-symbols-outlined">
                             chevron_right
                         </span></button>
                 </div>
@@ -467,106 +463,117 @@
                     details</span><br>
                 <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
                 <label>
-                    <input type="text" required="required" title="Enter your name">
+                    <input id="c_name" type="text" required="required" title="Enter your name">
                     <span>Name</span>
                 </label>
 
                 <label>
-                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    <input id="c_email" type="email" pattern="[a-zA-Z0-9._%\\+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
                         title="Kindly enter a valid email address" required="required">
                     <span>Email</span>
                 </label>
 
                 <label>
-                    <input type="tel" required="required" title="Enter your phone number">
+                    <input id="c_contact" type="tel" required="required" title="Enter your phone number">
                     <span>Phone number</span>
                 </label>
 
-                <label><br>
-                    <select class="select" title="Enter duration" required="required">
-                        <option value="1">1 day</option>
-                        <option value="2">2 days</option>
-                        <option value="3">3 days</option>
-                        <option value="4">4 days</option>
-                        <option value="5">5 days</option>
-                        <option value="5">more than 5 days</option>
-                    </select>
-                    <span>Service duration</span>
-                </label>          
-
-                <label>
-                    <input type="text" name="date" id="date" data-select="datepicker" required="required"
-                        title="Enter date of shoot">
-                    <span>Date of shoot</span>
-                </label>
-                
-                <label>
-                    <input data-provide="text" type="time" multiple required="required"
-                        title="Enter timing of shoot">
-                    <span>Shoot timing</span>
-                </label>
-                
                 <label>
                     <br><br>
-                    <select id="choices-multiple-remove-button"
-                        placeholder="You can add multiple services" multiple required>
+                    <select id="choices-multiple-remove-button" id="c_shoot_type"
+                        placeholder="You can add multiple events" multiple required>
                         <option value="Pre wedding shoot">Pre wedding shoot</option>
-                        <option value="Post wedding shoot">Post wedding shoot</option>
-                        <option value="Other">Other</option>
+                        <option value="Wedding shoot">Wedding shoot</option>
+                        <option value="Post wedding shoot">Post wedding shoot</option>
+                        <option value="Other">Other...</option>
                     </select>
                     <span>Select service</span>
                 </label>
-                
+
                 <label>
-                    <input data-provide="text" required="required" title="Enter some details about shooting">
-                    <span>Add details</span>
-                </label>  
+                    <input id="c_shoot_date" data-select="datepicker" required="required" title="Enter date of shoot">
+                    <span>Date of shoot</span>
+                </label>
 
                 <label><br>
-                    <select class="select" title="Select number of photographers" required="required">
-                        <option value="1">none</option>
+                    <select id="c_shoot_duration" class="select" title="Enter duration" required="required">
+                        <option value="1 day">1 day</option>
+                        <option value="2 days">2 days</option>
+                        <option value="3 days">3 days</option>
+                        <option value="4 days">4 days</option>
+                        <option value="5 days">5 days</option>
+                        <option value="more than 5 days">more than 5 days</option>
+                    </select>
+                    <span>Shoot duration</span>
+                </label>
+
+                <label>
+                    <input id="c_venue" type="text" required="required"
+                        title="Enter address of shoot for selected services">
+                    <span>Shooting venue</span>
+                </label>
+
+                <label>
+                    <input id="c_shoot_time" data-provide="text" type="time" required="required"
+                        title="Enter timing of selected services">
+                    <span>Shoot timing</span>
+                </label>
+
+                <label>
+                    <input id="c_shoot_detail" data-provide="text" required="required"
+                        title="Enter some details about shoot">
+                    <span>Shoot details</span>
+                </label>
+
+                <label><br>
+                    <select id="c_num_photographers" class="select" title="Select number of photographers"
+                        required="required">
+                        <option value="none">none</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
                         <option value="4">3</option>
                         <option value="5">4</option>
                         <option value="6">5</option>
-                        <option value="7">more than 5</option>
+                        <option value="more than 5">more than 5</option>
                     </select>
                     <span>Number of photographers required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" title="Select number of videographers" required="required">
-                        <option value="1">none</option>
+                    <select id="c_num_videographers" class="select" title="Select number of videographers"
+                        required="required">
+                        <option value="none">none</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
                         <option value="4">3</option>
                         <option value="5">4</option>
                         <option value="6">5</option>
-                        <option value="7">more than 5</option>
+                        <option value="more than 5">more than 5</option>
                     </select>
                     <span>Number of videographers required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" required="required">
-                        <option value="1">no</option>
-                        <option value="2">yes</option>
+                    <select id="c_drone" class="select" required="required">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
                     </select>
                     <span>Drone required</span>
                 </label>
 
                 <label>
-                    <input data-provide="text" required="none" title="Leave us a message">
+                    <input id="c_message" data-provide="text" required="none" title="Leave us a message">
                     <span>Add a message</span>
                 </label>
 
                 <br><br>
 
+
                 <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
-                    <button type="" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
-                        class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
-                            class="material-symbols-outlined">
+                    <button id="btn_submit" type="submit" form="form_couple_shoot"
+                        onclick="couple_shoot_sendEmail(); removeFocus()"
+                        style="display: flex; justify-content: space-around;" class="btn btn-outline-dark">Book now<span
+                            style="padding-top: 2px;" class="material-symbols-outlined">
                             chevron_right
                         </span></button>
                 </div>
@@ -597,48 +604,24 @@
                     details</span><br>
                 <hr><span style="color: #40494d;">Tell us a bit about yourself</span><br><br><br><br>
                 <label>
-                    <input type="text" required="required" title="Enter your name">
+                    <input id="s_name" type="text" required="required" title="Enter your name">
                     <span>Name</span>
                 </label>
 
                 <label>
-                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    <input id="s_email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
                         title="Kindly enter a valid email address" required="required">
                     <span>Email</span>
                 </label>
 
                 <label>
-                    <input type="tel" required="required" title="Enter your phone number">
+                    <input id="s_contact" type="tel" required="required" title="Enter your phone number">
                     <span>Phone number</span>
                 </label>
 
-                <label><br>
-                    <select class="select" title="Enter duration" required="required">
-                        <option value="1">1 day</option>
-                        <option value="2">2 days</option>
-                        <option value="3">3 days</option>
-                        <option value="4">4 days</option>
-                        <option value="5">5 days</option>
-                        <option value="5">more than 5 days</option>
-                    </select>
-                    <span>Event duration</span>
-                </label>          
-
-                <label>
-                    <input type="text" name="date" id="date" data-select="datepicker" required="required"
-                        title="Enter date of event">
-                    <span>Date of event</span>
-                </label>
-                
-                <label>
-                    <input data-provide="text" type="time" multiple required="required"
-                        title="Enter timing of selected events">
-                    <span>Event timing</span>
-                </label>
-                
                 <label>
                     <br><br>
-                    <select id="choices-multiple-remove-button"
+                    <select id="choices-multiple-remove-button" id="s_event_type"
                         placeholder="You can add multiple events" multiple required>
                         <option value="Birthday">Birthday</option>
                         <option value="Family dinner">Family dinner</option>
@@ -647,57 +630,87 @@
                     </select>
                     <span>Type of event</span>
                 </label>
-                
+
                 <label>
-                    <input data-provide="text" required="required" title="Enter some details about event">
-                    <span>Event details</span>
-                </label>  
+                    <input id="s_event_date" data-select="datepicker" required="required" title="Enter date of event">
+                    <span>Date of event</span>
+                </label>
 
                 <label><br>
-                    <select class="select" title="Select number of photographers" required="required">
-                        <option value="1">none</option>
+                    <select id="s_event_duration" class="select" title="Enter duration" required="required">
+                        <option value="1 day">1 day</option>
+                        <option value="2 days">2 days</option>
+                        <option value="3 days">3 days</option>
+                        <option value="4 days">4 days</option>
+                        <option value="5 days">5 days</option>
+                        <option value="more than 5 days">more than 5 days</option>
+                    </select>
+                    <span>Event duration</span>
+                </label>
+
+                <label>
+                    <input id="s_venue" type="text" required="required" title="Enter address for selected events">
+                    <span>Event venue</span>
+                </label>
+
+                <label>
+                    <input id="s_event_time" data-provide="text" type="time" required="required"
+                        title="Enter timing of selected events">
+                    <span>Event timing</span>
+                </label>
+
+                <label>
+                    <input id="s_event_detail" data-provide="text" required="required"
+                        title="Enter some details about event">
+                    <span>Event details</span>
+                </label>
+
+                <label><br>
+                    <select id="s_num_photographers" class="select" title="Select number of photographers"
+                        required="required">
+                        <option value="none">none</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
                         <option value="4">3</option>
                         <option value="5">4</option>
                         <option value="6">5</option>
-                        <option value="7">more than 5</option>
+                        <option value="more than 5">more than 5</option>
                     </select>
                     <span>Number of photographers required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" title="Select number of videographers" required="required">
-                        <option value="1">none</option>
+                    <select id="s_num_videographers" class="select" title="Select number of videographers"
+                        required="required">
+                        <option value="none">none</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
                         <option value="4">3</option>
                         <option value="5">4</option>
                         <option value="6">5</option>
-                        <option value="7">more than 5</option>
+                        <option value="more than 5">more than 5</option>
                     </select>
                     <span>Number of videographers required</span>
                 </label>
-                
+
                 <label><br>
-                    <select class="select" required="required">
-                        <option value="1">no</option>
-                        <option value="2">yes</option>
+                    <select id="s_drone" class="select" required="required">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
                     </select>
                     <span>Drone required</span>
                 </label>
 
                 <label>
-                    <input data-provide="text" required="none" title="Leave us a message">
+                    <input id="s_message" data-provide="text" required="none" title="Leave us a message">
                     <span>Add a message</span>
                 </label>
 
                 <br><br>
-
                 <div class="container-fluid" style="display: flex; justify-content: flex-end; margin-top: -3rem;">
-                    <button type="" onclick="removeFocus()" style="display: flex; justify-content: space-around;"
-                        class="btn btn-outline-dark">Book now<span style="padding-top: 2px;"
-                            class="material-symbols-outlined">
+                    <button type="submit" form="form_special_event" onclick="special_event_sendEmail(); removeFocus()"
+                        style="display: flex; justify-content: space-around;" class="btn btn-outline-dark">Book now<span
+                            style="padding-top: 2px;" class="material-symbols-outlined">
                             chevron_right
                         </span></button>
                 </div>
@@ -707,6 +720,23 @@
     <!-- forms -->
 
     <!-- forms_confirmation -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Session request submitted successfully!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You will shortly receive an email regarding meeting address and timing.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-dark text-center text-white" style="margin-top: 4rem;">
         <!-- Grid container -->
@@ -770,7 +800,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="path/to/choices.min.js"></script>
+    <!-- <script src="path/to/choices.min.js"></script> -->
     <script>
         $(document).ready(function () {
             var eventTypeSelect = new Choices('#choices-multiple-remove-button', {
@@ -789,6 +819,135 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <!-- smtp -->
+    <script src="https://smtpjs.com/v3/smtp.js
+    "></script>
+    <!-- form_wedding_event -->
+    <script>
+        function wedding_event_sendEmail() {
+            var form = document.getElementById('form_wedding_event');
+
+            if (!form.checkValidity()) {
+                alert("Please fill out all required fields before sending the request!");
+                return;
+            }
+
+            const selectedEventTypes = Array.from(document.getElementById("choices-multiple-remove-button").selectedOptions);
+            const selectedEventTypesArray = selectedEventTypes.map(option => option.value);
+
+            event.preventDefault();
+
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "abubakaranjum065@gmail.com",
+                Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
+                To: 'abubakaranjum066@gmail.com',
+                From: "abubakaranjum065@gmail.com",
+                Subject: "Session requested for Wedding event by " + document.getElementById("w_name").value,
+                Body: "Name : " + document.getElementById("w_name").value + "<br>Email : " + document.getElementById("w_email").value + "<br>Phone number : " + document.getElementById("w_contact").value + "<br>Event type : " + selectedEventTypesArray.join(', ') + "<br>Date of event : " + document.getElementById("w_event_date").value + "<br>Event duration : " + document.getElementById("w_event_duration").value + "<br>Event venue : " + document.getElementById("w_venue").value + "<br>Event timing : " + document.getElementById("w_event_time").value + "<br>Event details : " + document.getElementById("w_event_detail").value + "<br>Number of photographers required : " + document.getElementById("w_num_photographers").value + "<br>Number of videographers required : " + document.getElementById("w_num_videographers").value + "<br>Drone required : " + document.getElementById("w_drone").value + "<br>Coverage required : " + document.getElementById("w_coverage").value + "<br>Message : " + document.getElementById("w_message").value + "<br><br><br>" + document.getElementById("w_name").value + " contacted you via UsmanNadeemStudio.com"
+            }).then(
+                () => {
+                    form.reset();
+                }
+            );
+            // Trigger modal opening
+            var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
+            scrollToTopWithDelay();
+        }
+    </script>
+
+    <!-- form_couple_shoot -->
+    <script>
+        const form_couple_shoot = document.getElementById("form_couple_shoot");
+
+        const selects_couple_shoot = form_couple_shoot.querySelectorAll("#choices-multiple-remove-button");
+        let selectedValues_couple_shoot = [];
+
+        selects_couple_shoot.forEach(select => {
+            select.addEventListener('change', () => {
+                const selectedOptions = Array.from(select.selectedOptions);
+                selectedValues_couple_shoot = selectedOptions.map(option => option.value);
+            });
+        });
+        function couple_shoot_sendEmail() {
+            var form = document.getElementById('form_couple_shoot');
+
+            if (!form.checkValidity()) {
+                alert("Please fill out all required fields before sending the request!");
+                return;
+            }
+
+            event.preventDefault();
+
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "abubakaranjum065@gmail.com",
+                Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
+                To: 'abubakaranjum066@gmail.com',
+                From: "abubakaranjum065@gmail.com",
+                Subject: "Session requested for Couple shoot by " + document.getElementById("c_name").value,
+
+                Body: "Name : " + document.getElementById("c_name").value + "<br>Email : " + document.getElementById("c_email").value + "<br>Phone number : " + document.getElementById("c_contact").value + "<br>Event type : " + selectedValues_couple_shoot.join(', ') + "<br>Date of event : " + document.getElementById("c_shoot_date").value + "<br>Event duration : " + document.getElementById("c_shoot_duration").value + "<br>Event venue : " + document.getElementById("c_venue").value + "<br>Event timing : " + document.getElementById("c_shoot_time").value + "<br>Event details : " + document.getElementById("c_shoot_detail").value + "<br>Number of photographers required : " + document.getElementById("c_num_photographers").value + "<br>Number of videographers required : " + document.getElementById("c_num_videographers").value + "<br>Drone required : " + document.getElementById("c_drone").value + "<br>Message : " + document.getElementById("c_message").value + "<br><br><br>" + document.getElementById("c_name").value + " contacted you via UsmanNadeemStudio.com"
+            }).then(
+                () => {
+                    form.reset();
+                }
+            );
+            // Trigger modal opening
+            var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
+
+            scrollToTopWithDelay();
+        }
+    </script>
+
+    <!-- form_special_event -->
+    <script>
+        const form = document.getElementById("form_special_event");
+
+        const selects = form.querySelectorAll("#choices-multiple-remove-button");
+        let selectedValues = [];
+
+        selects.forEach(select => {
+            select.addEventListener('change', () => {
+                const selectedOptions = Array.from(select.selectedOptions);
+                selectedValues = selectedOptions.map(option => option.value);
+            });
+        });
+        function special_event_sendEmail() {
+            var form = document.getElementById('form_special_event');
+
+            if (!form.checkValidity()) {
+                alert("Please fill out all required fields before sending the request!");
+                return;
+            }
+
+            event.preventDefault();
+
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "abubakaranjum065@gmail.com",
+                Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
+                To: 'abubakaranjum066@gmail.com',
+                From: "abubakaranjum065@gmail.com",
+                Subject: "Session requested for Special event by " + document.getElementById("s_name").value,
+                Body: "Name : " + document.getElementById("s_name").value + "<br>Email : " + document.getElementById("s_email").value + "<br>Phone number : " + document.getElementById("s_contact").value + "<br>Event type : " + selectedValues.join(', ') + "<br>Date of event : " + document.getElementById("s_event_date").value + "<br>Event duration : " + document.getElementById("s_event_duration").value + "<br>Event venue : " + document.getElementById("s_venue").value + "<br>Event timing : " + document.getElementById("s_event_time").value + "<br>Event details : " + document.getElementById("s_event_detail").value + "<br>Number of photographers required : " + document.getElementById("s_num_photographers").value + "<br>Number of videographers required : " + document.getElementById("s_num_videographers").value + "<br>Drone required : " + document.getElementById("s_drone").value + "<br>Message : " + document.getElementById("s_message").value + "<br><br><br>" + document.getElementById("s_name").value + " contacted you via UsmanNadeemStudio.com"
+            }).then(
+                () => {
+                    form.reset();
+                }
+            );
+            // Trigger modal opening
+            var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
+            scrollToTopWithDelay();
+        }
+    </script>
+
 </body>
 
 </html>
