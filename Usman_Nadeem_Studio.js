@@ -138,8 +138,8 @@ function activateScroll() {
 document.addEventListener('DOMContentLoaded', function () {
   var background = document.getElementById('background');
   var section = document.getElementById('decoration_section');
-  var defaultBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1688759091/pexels-v%C4%83n-th%E1%BA%AFng_fbni2c.jpg';
-  var customBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1692390073/priscilla-du-preez-rf5U-IXqxzg-unsplash_tgxoas.jpg';
+  var defaultBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1688933066/foto-pettine-IfjHaIoAoqE-unsplash_vyfdo5.jpg';
+  var customBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1688759091/pexels-v%C4%83n-th%E1%BA%AFng_fbni2c.jpg';
 
   var observer = new IntersectionObserver(function (entries) {
     var entry = entries[0];
