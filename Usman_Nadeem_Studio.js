@@ -138,8 +138,8 @@ function activateScroll() {
 document.addEventListener('DOMContentLoaded', function () {
   var background = document.getElementById('background');
   var section = document.getElementById('decoration_section');
-  var defaultBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1692390073/priscilla-du-preez-rf5U-IXqxzg-unsplash_tgxoas.jpg';
-  var customBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1688759091/pexels-v%C4%83n-th%E1%BA%AFng_fbni2c.jpg';
+  var defaultBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1688759091/pexels-v%C4%83n-th%E1%BA%AFng_fbni2c.jpg';
+  var customBackgroundURL = 'https://res.cloudinary.com/dghb1dhbv/image/upload/v1692390073/priscilla-du-preez-rf5U-IXqxzg-unsplash_tgxoas.jpg';
 
   var observer = new IntersectionObserver(function (entries) {
     var entry = entries[0];
@@ -155,7 +155,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  observer.observe(document.getElementById('portfolio_gallery_section'));
   observer.observe(section);
+  // observer.observe(document.getElementById('client_album_section'));
 });
 
 function redirectTo_book_session() {
@@ -190,6 +192,7 @@ function toggleDisplayof_form(FormToShow) {
   if (sectionToHide.style.display === "none") {
     sectionToHide.style.display = "block";
     formToShow.style.display = "none";
+    formToShow.reset();
     redirectTo_book_session();
   } else {
     sectionToHide.style.display = "none";
@@ -203,27 +206,31 @@ function contactus_sendEmail() {
   var form = document.getElementById('contactForm');
 
   if (!form.checkValidity()) {
-      alert("Please fill out all required fields before sending the message!");
-      return;
+    alert("Please fill out all required fields before sending the message!");
+    return;
   }
 
   event.preventDefault();
+  var contact_name = document.getElementById("name").value;
+  var contact_email = document.getElementById("email").value;
+  var contact_subject = document.getElementById("subject").value;
+  var contact_message = document.getElementById("message").value;
   Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: "abubakaranjum065@gmail.com",
-      Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
-      To: 'abubakaranjum066@gmail.com',
-      From: "abubakaranjum065@gmail.com",
-      Subject: "Message from " + document.getElementById("name").value + ", UsmanNadeemStudio.com",
-      Body: "Name : " + document.getElementById("name").value + "<br>Email : " + document.getElementById("email").value + "<br>Subject : " + document.getElementById("subject").value + "<br>Message : " + document.getElementById("message").value
+    Host: "smtp.elasticemail.com",
+    Username: "abubakaranjum065@gmail.com",
+    Password: "B35C93DC499BAB4DF9685E5FD65177F98930",
+    To: 'abubakaranjum066@gmail.com',
+    From: "abubakaranjum065@gmail.com",
+    Subject: "Message from " + document.getElementById("name").value + ", UsmanNadeemStudio.com",
+    Body: "Name : " + contact_name + "<br>Email : " + contact_email + "<br>Subject : " + contact_subject + "<br>Message : " + contact_message
   }).then(
-      () => {
-          form.reset();
-      }
+    () => {
+      form.reset();
+    }
   );
-    // Trigger modal opening
-    var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-    modal.show();
+  // Trigger modal opening
+  var modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  modal.show();
 }
 
 
